@@ -1,0 +1,51 @@
+<div
+  class="character-detail-background"
+  *ngIf="character$ | async as character"
+>
+<button class="backButton" [routerLink]="['/home']">Go back</button>
+  <div class="character-detail-container" [ngClass]="episodes.length <= 5 ? 'heightContainer' : '' ">
+    <div id="profileCont">
+      <div class="circleCont">
+        <img [src]="character.image" alt="" class="circleImg" />
+      </div>
+      <div class="name">
+        {{ character.name }}
+      </div>
+    </div>
+    <div class="descriptionCont">
+      <div class="statusCont">
+        <span class="statusSpan">Status:</span>
+        <div class="statusInner">
+          <div
+            class="circleStatus green"
+            *ngIf="character.status === 'Alive'"
+          ></div>
+          <div
+            class="circleStatus gray"
+            *ngIf="character.status === 'unknown'"
+          ></div>
+          <div
+            class="circleStatus red"
+            *ngIf="character.status === 'Dead'"
+          ></div>
+          <div class="status">{{ character.status }}</div>
+        </div>
+      </div>
+      <div class="descRow">
+        <span>Species:</span>
+        <div class="desc">{{ character.species }}</div>
+      </div>
+      <div class="descRow">
+        <span>Last known location:</span>
+        <div class="desc">{{ character.location.name }}</div>
+      </div>
+      <div class="episodesCont">
+        <span>Episodes:</span>
+        <div class="episodeRow" *ngFor="let episode of episodes">
+          <div class="episodeCircle"></div>
+          <div class="episodeName">{{ episode.name }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

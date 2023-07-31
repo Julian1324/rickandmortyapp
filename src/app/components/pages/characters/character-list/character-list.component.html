@@ -1,0 +1,29 @@
+<div
+  class="character-list-background"
+  infinite-scroll
+  (scrolled)="onScrollDown()"
+  [ngClass]="characters.length <= 2 ? 'heightContainer' : ''"
+>
+  <div
+    class="character-list-container"
+    [ngClass]="characters.length == 0 ? 'heightContainer' : ''"
+  >
+    <div class="card-container" *ngFor="let character of characters">
+      <app-character [character]="character"></app-character>
+    </div>
+    <div class="card-container2" *ngIf="loadingData">
+      <app-character-loading></app-character-loading>
+      <app-character-loading></app-character-loading>
+      <app-character-loading></app-character-loading>
+      <app-character-loading></app-character-loading>
+    </div>
+  </div>
+  <div
+    class="container-notfound"
+    *ngIf="(characters.length <= 0) && (loadingData == false)"
+    style="color: white"
+  >
+    No results...
+  </div>
+  <button class="up-button" (click)="onScrollTop()">Go up</button>
+</div>

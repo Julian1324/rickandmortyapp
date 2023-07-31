@@ -1,0 +1,63 @@
+.main-header {
+  height: 37vh;
+  background-color: rgba(203, 203, 203, 0.134);
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  padding-top: 2vh;
+  width: 100%;
+}
+
+.centeredBar {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+.rickImg {
+  width: 5vw;
+  height: 5vw;
+}
+
+.rickImg:hover {
+  cursor: pointer;
+}
+
+.titlePage {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: 7vh;
+  font-size: 4vw;
+  font-weight: 600;
+  color: rgb(39, 43, 51);
+}
+
+@media screen and (max-width: 414px) {
+  .centeredBar {
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+  }
+
+  .rickImg {
+    margin-top: 4vh;
+    width: 15vw;
+    height: 15vw;
+  }
+
+  .titlePage {
+    font-size: 6vw;
+    margin-top: 3vh;
+  }
+
+  .main-header {
+    height: 30vh;
+  }
+
+  .navbar {
+    padding-top: 0;
+  }
+}

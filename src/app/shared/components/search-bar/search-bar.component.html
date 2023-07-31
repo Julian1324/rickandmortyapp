@@ -1,0 +1,26 @@
+<div class="input-container">
+  <label for="searchTypes" class="labelTypes">Search by:</label>
+  <select
+    id="searchTypes"
+    #typeSearch
+    (change)="onChangeSelect(typeSearch.value)"
+  >
+    <option value="name">Name</option>
+    <option value="gender">Gender</option>
+  </select>
+  <input
+    type="text"
+    id="search-input"
+    #inputSearch
+    autofocus
+    placeholder="Search..."
+    (input)="onSearch(inputSearch.value)"
+    (keyup.enter)="onSearch(inputSearch.value)"
+  />
+  <img
+    [src]="lupaPng"
+    id="lupaImg"
+    alt=""
+    (click)="onSearch(inputSearch.value)"
+  />
+</div>

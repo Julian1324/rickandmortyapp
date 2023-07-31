@@ -1,0 +1,38 @@
+<div class="card">
+  <img
+    [src]="character.image"
+    [alt]="character.name"
+    class="cardImg"
+    [routerLink]="['/character-details', character.id]"
+  />
+  <div class="card-inner">
+    <div
+      class="nameCharacter"
+      [routerLink]="['/character-details', character.id]"
+    >
+      {{ character.name }}
+    </div>
+    <div class="statusCharacter">
+      <div
+        class="circleStatus green"
+        *ngIf="character.status === 'Alive'"
+      ></div>
+      <div
+        class="circleStatus gray"
+        *ngIf="character.status === 'unknown'"
+      ></div>
+      <div class="circleStatus red" *ngIf="character.status === 'Dead'"></div>
+      <div class="statusAndSpecies">
+        {{ character.status }} - {{ character.species }}
+      </div>
+    </div>
+    <span>Gender:</span>
+    <div class="gender">
+      {{ character.gender }}
+    </div>
+    <span>First seen in:</span>
+    <div class="firstSeen">
+      {{ character.episode }}
+    </div>
+  </div>
+</div>

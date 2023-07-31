@@ -1,0 +1,59 @@
+.input-container {
+  display: flex;
+  align-items: center;
+  width: auto;
+}
+
+#search-input {
+  margin-top: 2vh;
+  width: 20vw;
+  height: 5vh;
+  border-radius: 0.4vw;
+  border: 1px solid rgba(0, 0, 0, 0.198);
+  font-size: 1.3vw;
+  padding-left: 0.4vw;
+}
+
+#lupaImg {
+  margin-top: 2vh;
+  margin-left: 1vw;
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
+#lupaImg:hover {
+  cursor: pointer;
+}
+
+#searchTypes {
+  margin: 2vh 1vw 0 1vw;
+  width: 10vw;
+  font-size: 1.5vw;
+}
+
+.labelTypes {
+  margin: 2vh 0.2vw 0 1vw;
+  font-size: 1.5vw;
+}
+
+@media screen and (max-width: 414px) {
+  #search-input {
+    width: 40vw;
+    height: 3vh;
+    font-size: 4vw;
+  }
+  .labelTypes {
+    font-size: 4vw;
+  }
+  #searchTypes {
+    width: 18vw;
+    font-size: 4vw;
+  }
+
+  #lupaImg {
+    margin-top: 2vh;
+    margin-left: 1vw;
+    width: 4vw;
+    height: 4vw;
+  }
+}
